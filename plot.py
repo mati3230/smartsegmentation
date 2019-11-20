@@ -7,15 +7,15 @@ from plyfile import PlyData
 def main():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--file", type=str, default="test.csv")
-    parser.add_argument("--label_file", type=str, default="test.csv")
-    parser.add_argument("--delimiter", type=str, default=";")
-    parser.add_argument("--color", type=bool, default=False)
-    parser.add_argument("--color_labels", type=bool, default=False)
-    parser.add_argument("--curvature", type=bool, default=False)
-    parser.add_argument("--curvature_start", type=float, default=0.0)
-    parser.add_argument("--curvature_stop", type=float, default=0.2)
-    parser.add_argument("--curvature_bins", type=int, default=20)
+    parser.add_argument("--file", type=str, default="test.csv", help="The csv file containing the point cloud which should be plotted. Default: test.csv")
+    parser.add_argument("--label_file", type=str, default="test.csv", help="Can be used to plot scenes from the ScanNet dataset. The points can be entered in the --file option. Default: test.csv")
+    parser.add_argument("--delimiter", type=str, default=";", help="Delimiter sign of the csv file. Default: ;")
+    parser.add_argument("--color", type=bool, default=False, help="Plot a point cloud with colour information with features [x y z r g b]. Default: False")
+    parser.add_argument("--color_labels", type=bool, default=False, help="If 'True', the labels of the point cloud will be coloured. Default: False")
+    parser.add_argument("--curvature", type=bool, default=False, help="Plot a histogram of the curvature values of the point cloud. Default: False")
+    parser.add_argument("--curvature_start", type=float, default=0.0, help="Lower bound to create the curvature histogram. Default: 0.0")
+    parser.add_argument("--curvature_stop", type=float, default=0.2, help="Upper bound to create the curvature histogram. Default: 0.2")
+    parser.add_argument("--curvature_bins", type=int, default=20, help="Number of bins of the curvature histogram. Default: 20")
 
     args = parser.parse_args()
     
