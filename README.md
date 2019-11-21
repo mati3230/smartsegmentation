@@ -1,6 +1,6 @@
 # Point Cloud Segmentation with Deep Reinforcement Learning
 
-A documentation of the code and the parameters will be provided soon. Furthermore, windows 10 installation instructions will also be provided soon.
+A documentation of the code and the parameters will be provided soon. Tested on Ubuntu 18.04.3 and Windows 10. 
 
 ## Requirements
 
