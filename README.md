@@ -47,6 +47,14 @@ The code is tested on Windows 10.
 3. Clone https://github.com/mati3230/segmentation.git
 4. Clone https://github.com/mati3230/stable-baselines.git
 5. Clone https://github.com/mati3230/pyntcloud.git
+  
+  Your folder structure should look as follows:
+  
+  * smartsegmentation
+    * segmentation
+    * stable-baselines
+    * pyntcloud
+  
 6. Go to the new directory "segmentation"
 7. Download the Open3D library from https://nextcloud.mirevi.medien.hs-duesseldorf.de/index.php/s/YYRNGZddRj9qaRX and store it in the "segmentation" directory
 8. Unzip the files to a new folder in the "segmentation" directory called "o3d_0800_win_10"
