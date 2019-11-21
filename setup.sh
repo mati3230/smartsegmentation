@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt-get install git
+
 git clone https://github.com/mati3230/segmentation.git
 cd segmentation
 sh setup.sh
@@ -17,13 +19,14 @@ if [ -n "$1" ]; then # if first parameter passed
     if [ $1 = "tensorflow==1.5" ] 
     then
         tf_version="==1.5"
+        
     elif [ $1 = "tensorflow==1.14" ] 
     then
         tf_version="==1.14"
     fi
 fi
 echo "tensorflow$tf_version will be installed" 
-
+pip install tensorflow$tf_version
 pip install -r requirements.txt
 
 git clone https://github.com/mati3230/pyntcloud.git
