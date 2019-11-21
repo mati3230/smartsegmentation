@@ -4,7 +4,7 @@ A documentation of the code and the parameters will be provided soon. Furthermor
 
 ## Requirements
 
-A python interpreter with version 3.6 is assumed.
+A python interpreter with version 3.6.8 is assumed. It is recommended to use virtualenv or a seperate anaconda environment. All requirements will be installed in the requirements section. 
 
 * [Segmentation Environment](https://github.com/mati3230/segmentation)
 * [Stable-Baselines](https://github.com/mati3230/stable-baselines)
@@ -14,27 +14,50 @@ A python interpreter with version 3.6 is assumed.
 * pandas
 * matplotlib
 * gym
-* tensorflow-gpu==1.14 (tensorflow==1.14 without the usage of the GPU can also be used)
+* tensorflow-gpu==1.14 (tensorflow==1.14 without the usage of the GPU can also be used, Use tensorflow==1.5 if no AVX instructions are provided by your CPU)
 
 ## Installation
 
+### Ubuntu
+
 The code is tested on Ubuntu 18.04.3.
 
-1. git clone https://github.com/mati3230/smartsegmentation.git
-2. cd smartsegmentation
+1. *git clone https://github.com/mati3230/smartsegmentation.git*
+2. *cd smartsegmentation*
 3. execute the setup.sh script:
 
 If a new CPU that provides AVX instructions and a CUDA capable GPU are available, use:
 
-* sh setup.sh
+* *sh setup.sh*
 
 If you just have no CUDA capable GPU in order to use tensorflow-gpu:
 
-* sh setup.sh tensorflow==1.14
+* *sh setup.sh tensorflow==1.14*
 
 Otherwise, if you have an older CPU and without a GPU, use:
 
-* sh setup.sh tensorflow==1.5
+* *sh setup.sh tensorflow==1.5*
+
+### Windows
+
+The code is tested on Windows 10. 
+
+1. Clone https://github.com/mati3230/smartsegmentation.git
+2. Go to the new directory "smartsegmentation"
+3. Clone https://github.com/mati3230/segmentation.git
+4. Clone https://github.com/mati3230/stable-baselines.git
+5. Clone https://github.com/mati3230/pyntcloud.git
+6. Go to the new directory "segmentation"
+7. Download the Open3D library from https://nextcloud.mirevi.medien.hs-duesseldorf.de/index.php/s/YYRNGZddRj9qaRX and store it in the "segmentation" directory
+8. Unzip the files to a new folder in the "segmentation" directory called "o3d_0800_win_10"
+9. Open a terminal (cmd, Anaconda Prompt) with your Python interpreter and install the contents in the "o3d_0800_win_10" folder with: *pip install .*
+10. In your python terminal, navigate one directory back to the segmentation directory and install the segmentation environment with: *pip install -e .*
+11. Download and install MPI for Windows: https://nextcloud.mirevi.medien.hs-duesseldorf.de/index.php/s/5MTjERWfc49KEyo
+12. Download and install MPI SDK for Windows: https://nextcloud.mirevi.medien.hs-duesseldorf.de/index.php/s/qeEikozKiQqCCPd
+13. In your python terminal, navigate one directory back into the smartsegmentation directory and install the stable-baselines: *pip install -e ./stable-baselines*
+14. Install tensorflow in your python terminal: *pip install tensorflow-gpu==1.14*. If you have no CUDA capable GPU use: *pip install tensorflow==1.14*. If you have an old CPU that provides no AVX instructions and no GPU: *pip install tensorflow==1.5*. 
+15. Type *pip install -r requirements.txt* In your python terminal
+16. Type *pip install -e ./pyntcloud* In your python terminal
 
 ## Testing/Agent Segmentation
 
