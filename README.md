@@ -20,9 +20,31 @@ A python interpreter with version 3.6 is assumed.
 
 The code is tested on Ubuntu 18.04.3.
 
-1. Clone this repository
+1. git clone https://github.com/mati3230/smartsegmentation.git
 2. cd smartsegmentation
-3. sh setup.sh
+3. execute the setup.sh script:
+
+If a new CPU that provides AVX instructions and a CUDA capable GPU are available, use:
+
+* sh setup.sh
+
+If you just have no CUDA capable GPU in order to use tensorflow-gpu:
+
+* sh setup.sh tensorflow==1.14
+
+Otherwise, if you have an older CPU and without a GPU, use:
+
+* sh setup.sh tensorflow==1.5
+
+## Testing/Agent Segmentation
+
+The segmentation by the agent and the result will be plotted. A trained policy is necessary. Policies are stored by default in the *./save_model/* directory. This directory can be changed with the *checkpoint_dir* parameter. 
+
+*python agent_play.py*
+
+Similar to the training process, the policies can be changed with:
+
+*python agent_play.py --policy=ldgcnn* or *python agent_play.py --policy=vox_custom --point_mode=Voxel*
 
 ## Training
 
@@ -53,16 +75,6 @@ Every step, the sampled observation will be plotted. The query points will be pl
 * K: 12
 * Angle Threshold: 20
 * Curvature Threshold: 0.1
-
-## Testing/Agent Segmentation
-
-The segmentation by the agent and the result will be plotted. A trained policy is necessary. Policies are stored by default in the *./save_model/* directory. This directory can be changed with the *checkpoint_dir* parameter. 
-
-*python agent_play.py*
-
-Similar to the training process, the policies can be changed with:
-
-*python agent_play.py --policy=ldgcnn* or *python agent_play.py --policy=vox_custom --point_mode=Voxel*
 
 ## Plot Point Clouds
 
