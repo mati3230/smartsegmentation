@@ -3,4 +3,3 @@ scipy
 pandas
 matplotlib
 gym
-tensorflow-gpu==1.14
