@@ -114,6 +114,8 @@ Every step, the sampled observation will be plotted. The query points will be pl
 * Angle Threshold: 20
 * Curvature Threshold: 0.1
 
+A more detailed explanation of the action input is provided in the [segmentation environment repository](https://github.com/mati3230/segmentation).
+
 ## Plot Point Clouds
 
 To plot the point cloud scene 0 use: 
