@@ -70,9 +70,13 @@ The code is tested on Windows 10.
 
 ## Testing/Agent Segmentation
 
-The segmentation of the agent and the result will be plotted. A trained policy is necessary. Policies are stored by default in the *./save_model/* directory. This directory can be changed with the *checkpoint_dir* parameter. 
+The segmentation of the agent and the result will be plotted. A trained policy is necessary. Policies are stored by default in the *./save_model/* directory. This directory can be changed with the *checkpoint_dir* parameter. The PointNet policy will be used by default.
 
 *python agent_play.py*
+
+The figure below shows a segmentation of the PointNet policy of the scene *PointcloudScenes/scene_0.csv* with a reward of 0.948/1. 
+
+![PointNetSegmentation](figures/segmentation_s_0_948.JPG)
 
 Similar to the training process, the policies can be changed with:
 
@@ -114,15 +118,23 @@ To plot the point cloud scene 0 use:
 
 *python plot.py --file=PointcloudScenes/scene_0.csv*
 
+![Scene0](figures/s_0.JPG)
+
 To see the different labels enter: 
 
 *python plot.py --file=PointcloudScenes/scene_0.csv --color_labels=True*
 
-To plot the curvature values type: 
+![Scene0Labels](figures/segments_s_0.JPG)
+
+To plot the curvature values as histogram type: 
 
 *python plot.py --file=PointcloudScenes/scene_0.csv --color_labels=True --curvature=True*
 
-Moreover the point cloud with the curvature values will be plotted. The points with high curvature will be plotted in red. 
+![Scene0HistCurvature](figures/hist_curvature_s_0.jpeg)
+
+Moreover the point cloud with the curvature values will be plotted. The points with high curvature values will be plotted in red. 
+
+![Scene0Curvature](figures/curvature_s_0.JPG)
 
 ## Generate Expert Trajectories
 
