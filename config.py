@@ -18,7 +18,7 @@ parser.add_argument("--pretrain_n_epochs", type=int, default=1000, help="Number 
 parser.add_argument("--pretrain_batch_size", type=int, default=4, help="Batch size of the pretraining. Default: 4")
 
 # training environment parameters
-parser.add_argument("--objs_dir", type=str, default="./", help="Location of the 'PointcloudScenes' directory. Default: ./")
+parser.add_argument("--objs_dir", type=str, default="./", help="Location of the directory where the 'PointcloudScenes' folder is located which consists of the point clouds that are stored as csv file. The columns of the point cloud should be as follows: [x y z nx ny nz s], where s is a segment number. Default: ./")
 parser.add_argument("--sample_size", type=int, default=1024, help="How many points should be sampled from the point cloud as observation for the agent. Default: 1024")
 parser.add_argument("--diff_punishment", type=float, default=0.0125, help="Segment difference factor that will be applied in the reward calculation. The agent will be punished for estimating to many or less objects. Default: 0.0125")
 parser.add_argument("--max_steps_per_scene", type=int, default=15, help="How many segmentation steps can be done to segment the point cloud. Default: 15")
