@@ -15,6 +15,7 @@ A python interpreter with version 3.6.8 is assumed. It is recommended to use vir
 * matplotlib
 * gym
 * tensorflow-gpu==1.14 (tensorflow==1.14 without the usage of the GPU can also be used, Use tensorflow==1.5 if no AVX instructions are provided by your CPU)
+	* CUDA and CUDNN has to be installed to use tensorflow-gpu. An installation guide can be found [here](https://www.tensorflow.org/install/gpu)
 
 ## Installation
 
