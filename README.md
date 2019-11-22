@@ -4,7 +4,7 @@ A documentation of the code and the parameters will be provided soon. Tested on 
 
 ## Requirements
 
-A python interpreter with version 3.6.8 is assumed. It is recommended to use virtualenv or a seperate anaconda environment. All requirements will be installed in the requirements section. 
+A python interpreter of the version 3.6.8 is assumed. It is recommended to use [virtualenv](https://virtualenv.pypa.io/en/latest/) or a [conda environment](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html). All requirements will be installed in the installation section. 
 
 * [Segmentation Environment](https://github.com/mati3230/segmentation)
 * [Stable-Baselines](https://github.com/mati3230/stable-baselines)
@@ -15,7 +15,7 @@ A python interpreter with version 3.6.8 is assumed. It is recommended to use vir
 * matplotlib
 * gym
 * tensorflow-gpu==1.14 (tensorflow==1.14 without the usage of the GPU can also be used, Use tensorflow==1.5 if no AVX instructions are provided by your CPU)
-	* CUDA and CUDNN has to be installed to use tensorflow-gpu. An installation guide can be found [here](https://www.tensorflow.org/install/gpu)
+	* CUDA and CUDNN has to be installed to use tensorflow-gpu. An installation guide can be found [here](https://www.tensorflow.org/install/gpu).
 
 ## Installation
 
@@ -56,21 +56,21 @@ The code is tested on Windows 10.
     * stable-baselines
     * pyntcloud
   
-6. Go to the new directory "segmentation"
-7. Download the Open3D library from https://nextcloud.mirevi.medien.hs-duesseldorf.de/index.php/s/YYRNGZddRj9qaRX and store it in the "segmentation" directory
-8. Unzip the files to a new folder in the "segmentation" directory called "o3d_0800_win_10"
-9. Open a terminal (cmd, Anaconda Prompt) with your Python interpreter and install the contents in the "o3d_0800_win_10" folder with: *pip install .*
-10. In your python terminal, navigate one directory back to the segmentation directory and install the segmentation environment with: *pip install -e .*
+6. Go to the new directory *segmentation*
+7. Download the Open3D library from https://nextcloud.mirevi.medien.hs-duesseldorf.de/index.php/s/YYRNGZddRj9qaRX and store it in the *segmentation* directory
+8. Unzip the files to a new folder in the *segmentation* directory called *o3d_0800_win_10*
+9. Open a terminal (cmd, Anaconda Prompt) with your Python interpreter and install the contents in the *o3d_0800_win_10* folder with: *pip install .*
+10. In your python terminal, navigate one directory back to the *segmentation* directory and install the segmentation environment with: *pip install -e .*
 11. Download and install MPI for Windows: https://nextcloud.mirevi.medien.hs-duesseldorf.de/index.php/s/5MTjERWfc49KEyo
 12. Download and install MPI SDK for Windows: https://nextcloud.mirevi.medien.hs-duesseldorf.de/index.php/s/qeEikozKiQqCCPd
-13. In your python terminal, navigate one directory back into the smartsegmentation directory and install the stable-baselines: *pip install -e ./stable-baselines*
+13. In your python terminal, navigate one directory back into the *smartsegmentation* directory and install the *stable-baselines*: *pip install -e ./stable-baselines*
 14. Install tensorflow in your python terminal: *pip install tensorflow-gpu==1.14*. If you have no CUDA capable GPU use: *pip install tensorflow==1.14*. If you have an old CPU that provides no AVX instructions and no GPU: *pip install tensorflow==1.5*. 
 15. Type *pip install -r requirements.txt* In your python terminal
 16. Type *pip install -e ./pyntcloud* In your python terminal
 
 ## Testing/Agent Segmentation
 
-The segmentation by the agent and the result will be plotted. A trained policy is necessary. Policies are stored by default in the *./save_model/* directory. This directory can be changed with the *checkpoint_dir* parameter. 
+The segmentation of the agent and the result will be plotted. A trained policy is necessary. Policies are stored by default in the *./save_model/* directory. This directory can be changed with the *checkpoint_dir* parameter. 
 
 *python agent_play.py*
 
@@ -130,7 +130,7 @@ Currently, we have no success while creating expert trajectories. Thus, this mod
 
 *python expert_traj_generator.py*
 
-A random agent will apply segmentations and trajectories with an appropriate reward which can be specified in the script will be saved. The available parameters are the same as for the training. Thus, the available parameters can be printed with the *-h* option. A *expert_trajectories.npz* file and a *pretrain* folder with the pretrain observations will be created. 
+A random agent will apply segmentations and trajectories with an appropriate reward will be saved which can be specified in the script. The available parameters are the same as for the training. Thus, the available parameters can be printed with the *-h* option. A *expert_trajectories.npz* file and a *pretrain* folder with the pretrain observations will be created. 
 The expert trajectories can be used in the training by setting the *pretrain* flag to 1: 
 
 *python train.py --pretrain=1*
