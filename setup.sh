@@ -28,8 +28,3 @@ fi
 echo "tensorflow$tf_version will be installed" 
 pip install tensorflow$tf_version
 pip install -r requirements.txt
-
-git clone https://github.com/mati3230/pyntcloud.git
-cd pyntcloud
-pip install -e .
-cd ..

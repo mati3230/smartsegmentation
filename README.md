@@ -47,26 +47,27 @@ The code is tested on Windows 10.
 2. Go to the new directory "smartsegmentation"
 3. Clone https://github.com/mati3230/segmentation.git
 4. Clone https://github.com/mati3230/stable-baselines.git
-5. Clone https://github.com/mati3230/pyntcloud.git
+5. Go to the new directory *segmentation*
+6. Clone https://github.com/mati3230/pyntcloud.git
+7. Download the Open3D library from https://nextcloud.mirevi.medien.hs-duesseldorf.de/index.php/s/YYRNGZddRj9qaRX and store it in the *segmentation* directory
+8. Unzip the files to a new folder in the *segmentation* directory called *o3d_0800_win_10*
   
-  Your folder structure should look as follows:
+  Your folder structure should be as follows:
   
   * smartsegmentation
     * segmentation
+		* pyntcloud
+		* o3d_0800_win_10
     * stable-baselines
-    * pyntcloud
-  
-6. Go to the new directory *segmentation*
-7. Download the Open3D library from https://nextcloud.mirevi.medien.hs-duesseldorf.de/index.php/s/YYRNGZddRj9qaRX and store it in the *segmentation* directory
-8. Unzip the files to a new folder in the *segmentation* directory called *o3d_0800_win_10*
-9. Open a terminal (cmd, Anaconda Prompt) with your Python interpreter and install the contents in the *o3d_0800_win_10* folder with: *pip install .*
-10. In your python terminal, navigate one directory back to the *segmentation* directory and install the segmentation environment with: *pip install -e .*
-11. Download and install MPI for Windows: https://nextcloud.mirevi.medien.hs-duesseldorf.de/index.php/s/5MTjERWfc49KEyo
-12. Download and install MPI SDK for Windows: https://nextcloud.mirevi.medien.hs-duesseldorf.de/index.php/s/qeEikozKiQqCCPd
-13. In your python terminal, navigate one directory back into the *smartsegmentation* directory and install the *stable-baselines*: *pip install -e ./stable-baselines*
-14. Install tensorflow in your python terminal: *pip install tensorflow-gpu==1.14*. If you have no CUDA capable GPU use: *pip install tensorflow==1.14*. If you have an old CPU that provides no AVX instructions and no GPU: *pip install tensorflow==1.5*. 
-15. Type *pip install -r requirements.txt* In your python terminal
-16. Type *pip install -e ./pyntcloud* In your python terminal
+		
+9. Open a terminal (cmd, Anaconda Prompt) with your Python interpreter, navigate to the *segmentation* directory and install the contents in the *o3d_0800_win_10* folder with: *pip install ./o3d_0800_win_10*
+10. Type *pip install -e ./pyntcloud* In your python terminal
+11. Install the segmentation environment in your python terminal with *pip install -e .*
+12. Download and install MPI for Windows: https://nextcloud.mirevi.medien.hs-duesseldorf.de/index.php/s/5MTjERWfc49KEyo
+13. Download and install MPI SDK for Windows: https://nextcloud.mirevi.medien.hs-duesseldorf.de/index.php/s/qeEikozKiQqCCPd
+14. In your python terminal, navigate one directory back into the *smartsegmentation* directory and install the *stable-baselines*: *pip install -e ./stable-baselines*
+15. Install tensorflow in your python terminal: *pip install tensorflow-gpu==1.14*. If you have no CUDA capable GPU use: *pip install tensorflow==1.14*. If you have an old CPU that provides no AVX instructions and no GPU: *pip install tensorflow==1.5*. 
+16. Type *pip install -r requirements.txt* In your python terminal
 
 ## Testing/Agent Segmentation
 
