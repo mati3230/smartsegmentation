@@ -16,6 +16,7 @@ def main():
     parser.add_argument("--curvature_start", type=float, default=0.0, help="Lower bound to create the curvature histogram. Default: 0.0")
     parser.add_argument("--curvature_stop", type=float, default=0.2, help="Upper bound to create the curvature histogram. Default: 0.2")
     parser.add_argument("--curvature_bins", type=int, default=20, help="Number of bins of the curvature histogram. Default: 20")
+    parser.add_argument("--coordinate_system", type=int, default=1, help="If '0', the coordinate system will not be plotted. Default: True")
 
     args = parser.parse_args()
     
@@ -30,7 +31,10 @@ def main():
                 plydata = PlyData.read(args.label_file)
                 labels = plydata["vertex"]["label"]
                 all_points = np.hstack((all_points, labels[:,None]))
-    else:
+    elif file_ending == ".txt":
+        all_points = np.loadtxt(args.file)
+        pcd.points = o3d.utility.Vector3dVector(all_points[:,:3])
+    else: # .csv
         all_points = np.loadtxt(args.file, delimiter=args.delimiter)
         #all_points = all_points[::100]
         #print(all_points.shape[0])
@@ -64,6 +68,7 @@ def main():
         
     if args.color:
         all_points[:,3:] /= 255
+        #print(all_points[:5])
         pcd.colors = o3d.utility.Vector3dVector(all_points[:,3:])
     else:
         if args.color_labels:
@@ -74,7 +79,10 @@ def main():
             color = np.zeros((all_points.shape[0], 3))
         pcd.colors = o3d.utility.Vector3dVector(color)
 
-    o3d.visualization.draw_geometries([pcd, utils.coordinate_system()])
+    if args.coordinate_system == 1:
+        o3d.visualization.draw_geometries([pcd, utils.coordinate_system()])
+    else:
+        o3d.visualization.draw_geometries([pcd])
 
 if __name__ == "__main__":
     main()
