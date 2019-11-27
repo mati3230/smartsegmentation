@@ -152,3 +152,7 @@ The expert trajectories can be used in the training by setting the *pretrain* fl
 *python train.py --pretrain=1*
 
 The plot script *plot_trajectory.py* is also experimental and has to be extended. 
+
+## Acknowledgements
+
+This project is sponsored by: German Federal Ministry of Education and Research (BMBF) under the project number 13FH022IX6. Project name: Interactive body-near production technology 4.0 (German: Interaktive körpernahe Produktionstechnik 4.0 (iKPT4.0))
