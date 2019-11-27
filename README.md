@@ -1,6 +1,7 @@
 # Point Cloud Segmentation with Deep Reinforcement Learning
 
-A documentation of the code and the parameters will be provided soon. Tested on Ubuntu 18.04.3 and Windows 10. 
+This is an experimental repository to conduct point cloud segmentation with deep reinforcement learning. The idea is that a neural network estimates the parameters of a geometric segmentation algorithm and gets a state update and reward. Currently, the region growing algorithm is used and three different networks can be chosen, namely, PointNet, LDGCNN and a voxel based net. 
+A documentation of the code and the parameters will be provided soon. The code is tested on Ubuntu 18.04.3 and Windows 10. 
 
 ## Requirements
 
@@ -28,7 +29,7 @@ The code is tested on Ubuntu 18.04.3.
 2. *cd smartsegmentation*
 3. execute the setup.sh script:
 
-If a new CPU that provides AVX instructions and a CUDA capable GPU are available, use:
+If a new CPU that provides AVX instructions and a CUDA capable GPU is available, use:
 
 * *sh setup.sh*
 
