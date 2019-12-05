@@ -2,29 +2,39 @@
 
 sudo apt-get install git
 
-git clone https://github.com/mati3230/segmentation.git
-cd segmentation
+DIR="segmentation"
+if [ ! -d ${DIR} ]
+then
+    git clone https://github.com/mati3230/segmentation.git
+fi
+
+cd ${DIR}
 sh setup.sh
 cd ..
 
 sudo apt-get install openmpi-bin libopenmpi-dev
-git clone https://github.com/mati3230/stable-baselines.git
-cd stable-baselines
+
+DIR="stable-baselines"
+if [ ! -d ${DIR} ]
+then
+    git clone https://github.com/mati3230/stable-baselines.git
+fi
+cd ${DIR}
 pip install -e .
 cd ..
 
 
-tf_version="-gpu==1.14"
+TF_VERSION="-gpu==1.14"
 if [ -n "$1" ]; then # if first parameter passed
     if [ $1 = "tensorflow==1.5" ] 
     then
-        tf_version="==1.5"
+        TF_VERSION="==1.5"
         
     elif [ $1 = "tensorflow==1.14" ] 
     then
-        tf_version="==1.14"
+        TF_VERSION="==1.14"
     fi
 fi
-echo "tensorflow$tf_version will be installed" 
-pip install tensorflow$tf_version
+echo "tensorflow${TF_VERSION} will be installed" 
+pip install tensorflow${TF_VERSION}
 pip install -r requirements.txt
