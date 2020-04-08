@@ -1,6 +1,6 @@
 # Point Cloud Segmentation with Deep Reinforcement Learning
 
-This is an experimental repository to conduct point cloud segmentation with deep reinforcement learning. The idea is that a neural network estimates the parameters of a geometric segmentation algorithm and gets a state update and reward. Currently, the region growing algorithm is used and three different networks can be chosen, namely, PointNet, LDGCNN and a voxel based net. 
+This is an experimental repository to conduct point cloud segmentation with deep reinforcement learning according to our [publication](https://www.researchgate.net/publication/338899365_Point_Cloud_Segmentation_with_Deep_Reinforcement_Learning). The idea is that a neural network estimates the parameters of a geometric segmentation algorithm and gets a state update and reward. Currently, the region growing algorithm is used and three different networks can be chosen, namely, PointNet, LDGCNN and a voxel based net. 
 A documentation of the code and the parameters will be provided soon. The code is tested on Ubuntu 18.04.3 and Windows 10. 
 
 ## Requirements
