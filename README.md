@@ -154,6 +154,30 @@ The expert trajectories can be used in the training by setting the *pretrain* fl
 
 The plot script *plot_trajectory.py* is also experimental and has to be extended. 
 
+## Citation
+
+If you use this repository, please use the following citation:
+
+@inproceedings{
+	
+	Tiator2020,
+
+	address = {Santiago de Compostela, Spain},
+	
+	author = {Tiator, Marcel and Geiger, Christian and Grimm, Paul},
+	
+	booktitle = {Proceedings of the 24th European Conference on Artificial Intelligence - ECAI '20},
+	
+	publisher = {IOS Press},
+	
+	title = {{Point Cloud Segmentation with Deep Reinforcement Learning}},
+	
+	url = {http://ecai2020.eu/papers/1345{\_}paper.pdf},
+	
+	year = {2020}
+	
+}
+
 ## Acknowledgements
 
 This project is sponsored by: German Federal Ministry of Education and Research (BMBF) under the project number 13FH022IX6. Project name: Interactive body-near production technology 4.0 (German: Interaktive körpernahe Produktionstechnik 4.0 (iKPT4.0))
